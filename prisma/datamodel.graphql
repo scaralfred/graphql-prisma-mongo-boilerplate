@@ -1,0 +1,23 @@
+type User {
+  id: ID! @id
+  email: String! @unique
+  emailVerified: Boolean! @default(value: false)
+  emailVerifiedToken: String
+  password: String!
+  firstName: String!
+  lastName: String!
+  resetToken: String
+  resetTokenExpires: Float
+  posts: [Post!]! @relation(link: INLINE)
+}
+
+type Post {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  published: Boolean! @default(value: false)
+  title: String!
+  content: String!
+  author: User!
+}
+

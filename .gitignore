@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Generated content
+.serverless/
+coverage
+
+# Environment specific
+.env
+.env.*
+!.env.example

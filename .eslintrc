@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": 0
+  },
+  "globals": {
+    "beforeEach": "readonly",
+    "describe": "readonly",
+    "expect": "readonly",
+    "jest": "readonly",
+    "test": "readonly"
+  }
+}

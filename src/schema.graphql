@@ -1,0 +1,67 @@
+# Data Types
+# ------------------------------------------------------------------------------------
+type Post {
+  id: ID!
+  published: Boolean!
+  title: String!
+  content: String!
+  author: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  emailVerified: Boolean!
+  # emailVerifiedToken: String
+  firstName: String!
+  lastName: String!
+  # resetToken: String
+  resetTokenExpires: Float
+  name: String
+  posts: [Post!]!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type SuccessMessage {
+  message: String
+}
+
+# Queries that are accepted
+# ------------------------------------------------------------------------------------
+type Query {
+  # Posts
+  post(id: ID!): Post
+  listPosts: [Post!]!
+  listDraftPosts: [Post!]!
+
+  # Users
+  me: User
+}
+
+# Mutations that are accepted
+# ------------------------------------------------------------------------------------
+type Mutation {
+  # Posts
+  createDraft(title: String!, content: String!): Post!
+  publish(id: ID!): Post!
+  deletePost(id: ID!): Post!
+  
+  # User
+  signup(email: String!, password: String!, firstName: String!, lastName: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  forgotPassword(email: String!): SuccessMessage
+  resetPassword(resetToken: String!, password: String!): AuthPayload!
+  updateUser(email: String, password: String, firstName: String, lastName: String): User!
+  verifyEmail(emailVerifiedToken: String!): User!
+}
+
+# Subscriptions that are accepted
+# ------------------------------------------------------------------------------------
+type Subscription {
+  # Posts
+  feedSubscription: Post
+}

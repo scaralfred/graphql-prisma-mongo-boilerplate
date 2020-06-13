@@ -1,0 +1,50 @@
+{
+  "name": "killerapp-graphql",
+  "description": "GraphQL server",
+  "keywords": [
+    "nodejs",
+    "prisma",
+    "prisma-client",
+    "graphql",
+    "graphql-yoga"
+  ],
+  "author": "https://github.com/scaralfred",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "scripts": {
+    "mongo-start": "docker run -d -p 27017-27019:27017-27019 --name mongodb mongo",
+    "prisma-token-dev": "prisma token -e .env",
+    "prisma-start": "docker-compose up -d",
+    "prisma-stop": "docker-compose stop",
+    "prisma-deploy-dev": "prisma deploy -e .env",
+    "prisma-deploy-prod": "prisma deploy -e .env.prod",
+    "graphql-start": "nodemon -e js,graphql -x node -r dotenv/config src/index.js",
+    "graphql-start-debug": "nodemon -e js,graphql -x node --inspect -r dotenv/config src/index.js",
+    "graphql-deploy-serverless": "serverless deploy",
+    "start": "node -r dotenv/config src/index.js",
+    "deploy": "npm run graphql-deploy-serverless",
+    "nodemon": "nodemon",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.4.2",
+    "prisma-client-lib": "^1.34.10"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "prisma": "^1.34.10",
+    "serverless": "^1.64.0"
+  }
+}
