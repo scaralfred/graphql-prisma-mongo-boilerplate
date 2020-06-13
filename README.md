@@ -2,7 +2,7 @@
 
 A boilerplate GraphQL server with:
 
-- [GraphQL Yoga](https://github.com/prisma/graphql-yoga) for a Scalable GraphQL server (based on based on Apollo Server & Express)
+- [GraphQL Yoga](https://github.com/prisma/graphql-yoga) for a Scalable GraphQL server (based on Apollo Server & Express)
 - [Prisma](https://www.prisma.io/) for a GraphQL database ORM (running on MySQL)
 - [GraphQL Playground](https://github.com/prisma/graphql-playground)
 - [Nodemon](https://github.com/remy/nodemon) to automatically restart the server when code changes are made
@@ -14,8 +14,8 @@ A boilerplate GraphQL server with:
 
 ## Requirements
 
-- Node, NPM and *Yarn*
-- Prisma CLI installed globally - `yarn global add prisma`
+- Node, NPM or *Yarn*
+- Prisma CLI installed globally - `npm i -g prisma`
 - Docker and Docker Compose (installed and running)
 
 ---
@@ -25,22 +25,22 @@ A boilerplate GraphQL server with:
 ```sh
 # --- Prisma Server --- #
 
-# 1. Start up a local Prisma Server and DB via Docker (https://bit.ly/2JpRbQf)
+# 1. Start up a local Prisma Server and DB via Docker
 docker-compose up -d
 
 # 2. Copy `.env.example` to `.env` and add your new DB endpoint and update the keys
 cp .env.example .env && nano .env
 
 # 3. Deploy the data models to your local Prisma server
-yarn prisma-deploy-dev
+npm prisma-deploy-dev
 
 # --- GraphQL Server --- #
 
 # 4. Install dependencies
-yarn install
+npm install
 
 # 5. Start GraphQL server (runs playground on http://localhost:4000)
-yarn start
+npm start
 ```
 
 ---
