@@ -1,9 +1,9 @@
-# GraphQL  Prisma  MongoDB  (boilerplate)
+# GraphQL server
 
 A boilerplate GraphQL server with:
 
 - [GraphQL Yoga](https://github.com/prisma/graphql-yoga) for a Scalable GraphQL server (based on Apollo Server & Express)
-- [Prisma](https://www.prisma.io/) for a GraphQL database ORM (running on MySQL)
+- [Prisma](https://www.prisma.io/) for a GraphQL database ORM (running on MongoDB)
 - [GraphQL Playground](https://github.com/prisma/graphql-playground)
 - [Nodemon](https://github.com/remy/nodemon) to automatically restart the server when code changes are made
 - [Dotenv](https://github.com/motdotla/dotenv) to handle environment variables
