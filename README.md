@@ -1,4 +1,4 @@
-# GraphQL Server Boilerplate
+# GraphQL Prisma MongoDB Boilerplate
 
 A boilerplate GraphQL server with:
 
